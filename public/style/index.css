@@ -324,7 +324,6 @@ label {
 .close-profile {
     transform: translateX(600px);
     opacity: 0;
-    right:auto;
 }
 
 #btn-profile-close {
