@@ -119,7 +119,7 @@ app.get(
 );
 
 app.get(
-    "/auth/google/secrets",
+    "/auth/google/callback",
     passport.authenticate("google", {
         successRedirect: "/",
         failureRedirect: "/login",
