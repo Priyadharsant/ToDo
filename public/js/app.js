@@ -121,14 +121,18 @@ document.addEventListener("DOMContentLoaded", () => {
         const addSection = document.getElementsByClassName("add-section")[0];
         addSection.style.display = "none";
     });
+ document.getElementsByClassName("profile-menu")[0].addEventListener("click", () => {
+        document.getElementsByClassName("menu")[0].classList.remove("close");
+        document.getElementsByClassName("menu")[0].classList.add("open");
+       
+    });
 
-const profileBtn = document.querySelector('.profile-menu');
-const menu = document.querySelector('.menu');
-const closeBtn = document.querySelector('#btn-profile-close');
+    document.getElementById("btn-profile-close").addEventListener("click", () => {
+        document.getElementsByClassName("menu")[0].classList.add("close");
+        document.getElementsByClassName("menu")[0].classList.remove("open");
 
-profileBtn.addEventListener('click', () => menu.classList.add('open'));
-closeBtn.addEventListener('click', () => menu.classList.remove('open'));
 
+    });
 
   });
 });
