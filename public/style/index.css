@@ -406,7 +406,17 @@ main:not(.menu):not(.menu *) {
     width: 100%;          /* Fit inside container */
     min-width: 400px;     /* Avoid breaking table structure */
     border-collapse: collapse;
+}header {
+    width: 100%;
+    padding: 0.3rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--primary);
+    color: white;
+    box-sizing: border-box;
 }
+
 
 /* Better look on mobile */
 @media (max-width: 480px) {
