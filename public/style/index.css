@@ -412,3 +412,32 @@ tr:nth-child(even) {
         transform: translateY(0);
     }
 }
+.menu.open {
+    opacity: 1;
+    pointer-events: auto;
+    animation: slideIn 0.5s ease-in-out;
+}
+
+.menu.close {
+    pointer-events: auto;
+    animation: slideOut 0.5s ease-in-out;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+@keyframes slideOut {
+    from {
+        opacity: 1;
+        transform: translateX((0));
+    }
+
+    to {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
