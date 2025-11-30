@@ -78,14 +78,18 @@
         </section>
         </main>
 </body>
-<script>
-const profileBtn = document.querySelector('.profile-menu');
-const menu = document.querySelector('.menu');
-const closeBtn = document.querySelector('#btn-profile-close');
+<script> document.getElementsByClassName("profile-menu")[0].addEventListener("click", () => {
+        document.getElementsByClassName("menu")[0].classList.remove("close");
+        document.getElementsByClassName("menu")[0].classList.add("open");
+       
+    });
 
-profileBtn.addEventListener('click', () => menu.classList.add('open'));
-closeBtn.addEventListener('click', () => menu.classList.remove('open'));
+    document.getElementById("btn-profile-close").addEventListener("click", () => {
+        document.getElementsByClassName("menu")[0].classList.add("close");
+        document.getElementsByClassName("menu")[0].classList.remove("open");
 
+
+    });
 
 </script>
 
