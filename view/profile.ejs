@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/style/index.css">
+  <link rel="stylesheet" href="/public/style/index.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
   <title>Home</title>
@@ -78,19 +78,14 @@
         </section>
         </main>
 </body>
-<script> document.getElementsByClassName("profile-menu")[0].addEventListener("click", () => {
-        document.getElementsByClassName("menu")[0].classList.remove("close");
-        document.getElementsByClassName("menu")[0].classList.add("open");
-       
-    });
+<script>
+  document.getElementsByClassName("profile-menu")[0].addEventListener("click", () => {
+    document.getElementsByClassName("menu")[0].classList.remove("close-profile");
+  });
 
-    document.getElementById("btn-profile-close").addEventListener("click", () => {
-        document.getElementsByClassName("menu")[0].classList.add("close");
-        document.getElementsByClassName("menu")[0].classList.remove("open");
-
-
-    });
-
+  document.getElementById("btn-profile-close").addEventListener("click", () => {
+    document.getElementsByClassName("menu")[0].classList.add("close-profile");
+  });
 </script>
 
 </html>
