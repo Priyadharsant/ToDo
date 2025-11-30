@@ -122,13 +122,17 @@ document.addEventListener("DOMContentLoaded", () => {
         addSection.style.display = "none";
     });
 
+document.getElementsByClassName("profile-menu")[0].addEventListener("click", () => {
+    document.getElementsByClassName("menu")[0].classList.remove("close-profile","shrink");
 
-    document.getElementsByClassName("profile-menu")[0].addEventListener("click", () => {
-        document.getElementsByClassName("menu")[0].classList.remove("close-profile");
-    });
+  });
 
-    document.getElementById("btn-profile-close").addEventListener("click", () => {
-        document.getElementsByClassName("menu")[0].classList.add("close-profile");
-    });
+  document.getElementById("btn-profile-close").addEventListener("click", () => {
+    document.getElementsByClassName("menu")[0].classList.add("close-profile");
+    setTimeout(() => {
+      document.getElementsByClassName("menu")[0].classList.add("shrink"); 
+    }, 500);
 
+
+  });
 });
