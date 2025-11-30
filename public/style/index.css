@@ -1,10 +1,3 @@
-/* GLOBAL */
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-}
-
 :root {
     --bg: hsl(276, 100%, 100%);
     --primary: hsl(276, 100%, 50%);
@@ -13,32 +6,39 @@
     --logo: hsl(276, 100%, 25%);
 }
 
-html,
-body {
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-}
-
 body {
     background: var(--bg);
+    margin: 0;
+    padding: 0;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    overflow-x: hidden;
 }
 
-/* HEADER */
 header {
     background: var(--primary);
     color: white;
-    top: 0;
+    top: 0px;
     padding: 0.3rem 1rem;
-    width: 100%;
+    width: calc(100vw -2rem);
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+
+.profile-menu {
+    transition: all 0.2s ease-in-out;
+}
+
+.profile-menu:hover {
+    transform: scale(1.05);
+}
+
+.profile-menu:active {
+    transform: scale(1);
+}
+
 
 .profile-menu {
     width: 50px;
@@ -48,15 +48,6 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: transform 0.2s ease-in-out;
-}
-
-.profile-menu:hover {
-    transform: scale(1.05);
-}
-
-.profile-menu:active {
-    transform: scale(1);
 }
 
 .logo {
@@ -80,24 +71,22 @@ header {
     transition: all 0.5s ease-in-out;
 }
 
-/* MAIN */
 main {
     flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    animation: fadeUp 0.6s ease-out forwards;
+    width: 100vw;
 }
 
 h2 {
     margin: 10px;
     color: var(--text1);
     font-weight: 900;
-    font-size: 28px;
+    font-size: 28PX;
 }
 
-/* TASK LIST */
 ul {
     box-shadow: 0px 2px 10px hsl(276, 0%, 80%);
     border-radius: 10px;
@@ -122,13 +111,16 @@ ul {
     border-radius: 5px;
     padding: 1.5rem 1rem;
     width: calc(100% - 2rem);
-    margin: 0;
+    margin: 0px;
     display: flex;
     align-items: center;
     gap: 10px;
     font-size: large;
     transition: all 0.3s ease-in-out;
+
 }
+
+
 
 .task-con p {
     margin: 0;
@@ -140,7 +132,6 @@ input[type="radio"] {
     margin: 0;
 }
 
-/* UPDATE TASK */
 .section-updateTask * {
     margin: 0;
 }
@@ -164,6 +155,7 @@ input[type="radio"] {
 .material-symbols-outlined:hover {
     background: var(--primary);
     color: white;
+
 }
 
 .updatedTask {
@@ -173,8 +165,8 @@ input[type="radio"] {
     transition: all 0.3s ease-in-out;
 }
 
-/* SHOW/HIDE */
 .show {
+
     transition: all 3s ease-in-out;
     opacity: 1;
     display: block;
@@ -185,7 +177,6 @@ input[type="radio"] {
     opacity: 0;
 }
 
-/* BUTTONS */
 .addNewTask,
 .btn-addTask {
     background: var(--primary);
@@ -217,7 +208,6 @@ input[type="radio"] {
     }
 }
 
-/* INPUT */
 #newTask {
     padding: 0.5rem;
     border: 1px solid hsl(276, 100%, 80%);
@@ -238,7 +228,6 @@ label {
     color: var(--text2);
 }
 
-/* ADD SECTION POPUP */
 .add-section {
     background: white;
     padding: 1rem 2rem;
@@ -276,38 +265,28 @@ label {
     border: none;
 }
 
-/* MENU (FIXED RESPONSIVE VERSION) */
 .menu {
+    height: 100%;
     position: absolute;
-    right: 0;
-    top: 0;
+    right: 0px;
+    top: 0px;
     padding: 0rem 1rem;
     min-width: 300px;
-    max-width: 400px;
-    height: 100vh;
     width: auto;
+    max-width: 400px;
     background: var(--logo);
-    border-radius: 10px;
+    transition: all 0.5s ease-in-out;
     z-index: 10;
-    transform: translateX(100%);
-    /* OFF SCREEN (RIGHT) */
-    opacity: 0;
-    pointer-events: none;
-    transition: transform 0.5s ease, opacity 0.5s ease;
-}
-
-.menu.open {
-    transform: translateX(0);
-    opacity: 1;
-    pointer-events: auto;
+    border-radius: 10px;
 }
 
 .menu ul {
     box-shadow: none;
     list-style: none;
-    align-items: flex-start;
+    align-items: start;
     margin: 0;
     gap: 10px;
+
 }
 
 .menu li {
@@ -319,6 +298,7 @@ label {
     display: flex;
     gap: 10px;
     align-items: center;
+
 }
 
 .menu li:hover {
@@ -329,7 +309,8 @@ label {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 20px 0;
+    margin-bottom: 20px;
+    margin-top: 20px;
 }
 
 .menu h2 {
@@ -340,9 +321,9 @@ label {
     background: var(--primary);
 }
 
-.menu li .material-symbols-outlined {
-    background: none;
-    color: white;
+.close-profile {
+    transform: translateX(600px);
+    opacity: 0;
 }
 
 #btn-profile-close {
@@ -359,17 +340,15 @@ label {
     background: var(--logo);
 }
 
-/* TABLE FIX (RESPONSIVE) */
-.history-container {
-    width: 100%;
-    overflow-x: auto;
+.menu li .material-symbols-outlined {
+    background: none;
+    color: white;
 }
 
 .history-container table {
-    width: 100%;
-    max-width: 100%;
+    width: 500px;
     text-align: center;
-    border-collapse: collapse;
+    gap: 0;
 }
 
 table,
@@ -377,6 +356,7 @@ tr,
 th,
 td {
     padding: 0.5rem;
+    border-collapse: collapse;
     transition: all 0.3s ease-in-out;
 }
 
@@ -400,7 +380,12 @@ tr:nth-child(even) {
     background: hsl(276, 100%, 95%);
 }
 
-/* ANIMATIONS */
+
+main:not(.menu):not(.menu *) {
+    animation: fadeUp 0.6s ease-out forwards;
+}
+
+
 @keyframes fadeUp {
     from {
         opacity: 0;
@@ -412,32 +397,36 @@ tr:nth-child(even) {
         transform: translateY(0);
     }
 }
-.menu.open {
-    opacity: 1;
-    pointer-events: auto;
-    animation: slideIn 0.5s ease-in-out;
+
+/* MOBILE TABLE FIX */
+.history-container {
+    width: 100%;
+    overflow-x: auto;
+    /* Allow horizontal scroll */
 }
 
-.menu.close {
-    pointer-events: auto;
-    animation: slideOut 0.5s ease-in-out;
+.history-container table {
+    width: 100%;
+    /* Fit inside container */
+    min-width: 400px;
+    /* Avoid breaking table structure */
+    border-collapse: collapse;
 }
 
-@keyframes slideIn {
-    from {
-        transform: translateX(100%);
-        opacity: 0;
+/* Better look on mobile */
+@media (max-width: 480px) {
+
+    th,
+    td {
+        padding: 0.7rem 0.3rem;
+        font-size: 14px;
     }
-}
 
-@keyframes slideOut {
-    from {
-        opacity: 1;
-        transform: translateX((0));
+    th {
+        font-size: 16px;
     }
 
-    to {
-        transform: translateX(100%);
-        opacity: 0;
+    .history-container table {
+        min-width: 350px;
     }
 }
