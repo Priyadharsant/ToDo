@@ -122,16 +122,13 @@ document.addEventListener("DOMContentLoaded", () => {
         addSection.style.display = "none";
     });
 
+
     document.getElementsByClassName("profile-menu")[0].addEventListener("click", () => {
-        document.getElementsByClassName("menu")[0].classList.remove("close");
-        document.getElementsByClassName("menu")[0].classList.add("open");
-       
+        document.getElementsByClassName("menu")[0].classList.remove("close-profile");
     });
 
     document.getElementById("btn-profile-close").addEventListener("click", () => {
-        document.getElementsByClassName("menu")[0].classList.add("close");
-        document.getElementsByClassName("menu")[0].classList.remove("open");
-
-
+        document.getElementsByClassName("menu")[0].classList.add("close-profile");
     });
+
 });
