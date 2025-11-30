@@ -121,7 +121,8 @@ document.addEventListener("DOMContentLoaded", () => {
         const addSection = document.getElementsByClassName("add-section")[0];
         addSection.style.display = "none";
     });
- document.getElementsByClassName("profile-menu")[0].addEventListener("click", () => {
+
+    document.getElementsByClassName("profile-menu")[0].addEventListener("click", () => {
         document.getElementsByClassName("menu")[0].classList.remove("close");
         document.getElementsByClassName("menu")[0].classList.add("open");
        
@@ -133,6 +134,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     });
-
-  });
 });
