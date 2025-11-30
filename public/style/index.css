@@ -1,0 +1,398 @@
+:root {
+    --bg: hsl(276, 100%, 100%);
+    --primary: hsl(276, 100%, 50%);
+    --text1: hsl(276, 100%, 40%);
+    --text2: hsl(276, 100%, 30%);
+    --logo: hsl(276, 100%, 25%);
+}
+
+body {
+    background: var(--bg);
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+header {
+    background: var(--primary);
+    color: white;
+    top: 0px;
+    padding: 0.3rem 1rem;
+    width: calc(100rem -2rem);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.profile-menu {
+    transition: all 0.2s ease-in-out;
+}
+
+.profile-menu:hover {
+    transform: scale(1.05);
+}
+
+.profile-menu:active {
+    transform: scale(1);
+}
+
+
+.profile-menu {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo {
+    background: var(--logo);
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: larger;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.logo-img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h2 {
+    margin: 10px;
+    color: var(--text1);
+    font-weight: 900;
+    font-size: 28PX;
+}
+
+ul {
+    box-shadow: 0px 2px 10px hsl(276, 0%, 80%);
+    border-radius: 10px;
+    padding: 0;
+    width: 95%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tasks hr {
+    background: hsl(276, 100%, 80%);
+    width: 90%;
+    height: 1.5px;
+    border: none;
+    margin: 0;
+}
+
+.task-con {
+    list-style: none;
+    border-radius: 5px;
+    padding: 1.5rem 1rem;
+    width: calc(100% - 2rem);
+    margin: 0px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: large;
+    transition: all 0.3s ease-in-out;
+
+}
+
+
+
+.task-con p {
+    margin: 0;
+}
+
+input[type="radio"] {
+    accent-color: var(--primary);
+    cursor: pointer;
+    margin: 0;
+}
+
+.section-updateTask * {
+    margin: 0;
+}
+
+.section-updateTask input {
+    font-size: medium;
+}
+
+.material-symbols-outlined.icon {
+    font-size: large;
+    color: var(--primary);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    padding: 0.15rem;
+    user-select: none;
+}
+
+.material-symbols-outlined:hover {
+    background: var(--primary);
+    color: white;
+
+}
+
+.updatedTask {
+    border: none;
+    outline: none;
+    border-bottom: 2px solid var(--primary);
+    transition: all 0.3s ease-in-out;
+}
+
+.show {
+
+    transition: all 3s ease-in-out;
+    opacity: 1;
+    display: block;
+}
+
+.hide {
+    display: none;
+    opacity: 0;
+}
+
+.addNewTask,
+.btn-addTask {
+    background: var(--primary);
+    color: white;
+    text-decoration: none;
+    margin: 20px;
+    padding: 0.5rem 1rem;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    border: none;
+}
+
+.addNewTask:hover,
+.btn-addTask:hover {
+    background: var(--text2);
+    box-shadow: 0 1px 5px hsl(0, 0%, 60%);
+    transform: scale(1.03) translateY(-3px);
+}
+
+.addNewTask:active,
+.btn-addTask:active {
+    animation: btnclick 0.5s ease-in-out;
+}
+
+@keyframes btnclick {
+    30% {
+        transform: translateY(2px) scale(1);
+    }
+}
+
+#newTask {
+    padding: 0.5rem;
+    border: 1px solid hsl(276, 100%, 80%);
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+#newTask:focus {
+    outline: none;
+    border-color: var(--text1);
+    box-shadow: 0 0 5px var(--text1);
+}
+
+label {
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--text2);
+}
+
+.add-section {
+    background: white;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    box-shadow: 0 3px 15px hsl(0, 0%, 70%);
+    position: fixed;
+    text-align: center;
+    display: none;
+}
+
+.add-section h2 {
+    margin-bottom: 1.4rem;
+}
+
+.add-section form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.add-section label {
+    margin-right: 1rem;
+}
+
+#newTaskClose,
+#btn-profile-close {
+    position: absolute;
+    right: 10px;
+    border-radius: 50%;
+    padding: 0.1rem;
+}
+
+.btn-sendEdit {
+    background: none;
+    border: none;
+}
+
+.menu {
+    height: 100%;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    padding: 0rem 1rem;
+    min-width: 300px;
+    width: auto;
+    max-width: 400px;
+    background: var(--logo);
+    transition: all 0.5s ease-in-out;
+    z-index: 10;
+    border-radius: 10px;
+}
+
+.menu ul {
+    box-shadow: none;
+    list-style: none;
+    align-items: start;
+    margin: 0;
+    gap: 10px;
+
+}
+
+.menu li {
+    background: hsl(276, 100%, 20%);
+    width: calc(100% - 2rem);
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+
+}
+
+.menu li:hover {
+    background: var(--primary);
+}
+
+.menu div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.menu h2 {
+    color: white;
+}
+
+.menu p {
+    background: var(--primary);
+}
+
+.close-profile {
+    transform: translateX(600px);
+    opacity: 0;
+}
+
+#btn-profile-close {
+    left: -50px;
+    right: auto;
+    top: 50%;
+    background: var(--primary);
+    font-size: 30px;
+    color: white;
+    padding: 0.2rem;
+}
+
+#btn-profile-close:hover {
+    background: var(--logo);
+}
+
+.menu li .material-symbols-outlined {
+    background: none;
+    color: white;
+}
+
+.history-container table {
+    width: 500px;
+    text-align: center;
+    gap: 0;
+}
+
+table,
+tr,
+th,
+td {
+    padding: 0.5rem;
+    border-collapse: collapse;
+    transition: all 0.3s ease-in-out;
+}
+
+th {
+    background: var(--primary);
+    color: white;
+    font-weight: bolder;
+    font-size: larger;
+}
+
+tr:not(:first-child):hover {
+    color: white;
+    background: hsl(276, 100%, 70%);
+}
+
+tr:nth-child(odd) {
+    background: hsl(276, 100%, 90%);
+}
+
+tr:nth-child(even) {
+    background: hsl(276, 100%, 95%);
+}
+
+
+main:not(.menu):not(.menu *) {
+    animation: fadeUp 0.6s ease-out forwards;
+}
+
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

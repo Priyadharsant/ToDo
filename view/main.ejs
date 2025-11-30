@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/style/index.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+  <title>Home</title>
+</head>
+
+<body>
+  <header>
+    <h1>Task Manager</h1>
+    <div class="profile-menu">
+      <%if(profile!=null){%>
+      <img src="<%=profile%>" class="logo-img" alt="🙎">
+      <%}else{%>
+      <p class="logo">
+        <%= username[0] %>
+      </p>
+      <%}%>  
+    </div>
+    <nav class="menu close-profile">
+      <span clicked="false" id="btn-profile-close" class="material-symbols-outlined btn-profile-close icon">
+        arrow_right_alt
+      </span>
+      <div>
+        <h2><%= username%></h2>
+      <div class="profile-menu">
+        <%if(profile!=null){%>
+        <img src="<%=profile%>" class="logo-img" alt="🙎">
+        <%}else{%>
+        <p class="logo">
+          <%= username[0] %>
+        </p>
+        <%}%>  
+    </div>
+    </div>
+    <ul>
+      <li onclick="window.location.href='/profile'">
+        <span class="material-symbols-outlined">
+          account_circle
+        </span>
+        Profile
+      </li>
+      <li onclick="window.location.href='/logout'">
+        <span class="material-symbols-outlined">
+          logout
+        </span>
+        Logout
+      </li>
+    </ul>
+    </nav>
+  </header>
+  <main>
+    <ul class="tasks">
+      <h2>Tasks</h2>
+      <% if (!todoList || todoList.length === 0) { %>
+        <p>No task</p>
+        <% } else { %>
+        <% todoList.forEach((row) => { %>
+        <li class="task-con">
+          <input type="radio" class="deleteTask" data-task-id="<%= row.id %>" data-task="<%= row.task %>">
+          <p class="task show"><%= row.task %></p>
+          <form action="/updateTask" method="POST" class="section-updateTask hide">
+            <input type="text" name="updatedTask" class="updatedTask" value="<%= row.task %>">
+            <input type="number" name="taskId" class="taskId" value="<%=row.id%>" hidden>
+            <button type="submit" class="btn-sendEdit">
+              <span clicked="false" id="edit" class="material-symbols-outlined icon">
+                send
+              </span>
+            </button>
+          </form>
+          <span clicked="false" id="edit" class="material-symbols-outlined icon edit">
+            edit
+          </span>
+        </li>
+        <hr class="task-hr">
+        <%}) %>
+        <%}%>
+      <a class="addNewTask" >Add Task</a>
+    </ul>
+      
+      <section class="add-section">
+        <span clicked="false" id="newTaskClose" class="material-symbols-outlined icon">
+          close
+        </span>
+        <form method="post" action="/addNewTask">
+          <h2>Add New Task</h2>
+          <div>
+            <label for="newTask">Task</label>
+            <input type="text" name="newTask" id="newTask" class="newTask" required>
+          </div>
+          <button type="submit" class="btn-addTask">Add</button>
+        </form>
+      </section>
+  </main>
+</body>
+<script src="/js/app.js"></script>
+
+</html>
