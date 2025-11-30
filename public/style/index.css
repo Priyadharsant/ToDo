@@ -6,7 +6,6 @@
     --logo: hsl(276, 100%, 25%);
 }
 
-/* BODY */
 body {
     background: var(--bg);
     margin: 0;
@@ -14,23 +13,34 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    overflow-x: hidden;   /* extra safety */
+    overflow-x: hidden;
 }
 
-/* HEADER */
 header {
     background: var(--primary);
     color: white;
+    top: 0px;
     padding: 0.3rem 1rem;
-    width: 100%;
+    width: calc(100% -2rem);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-sizing: border-box;
 }
 
 .profile-menu {
     transition: all 0.2s ease-in-out;
+}
+
+.profile-menu:hover {
+    transform: scale(1.05);
+}
+
+.profile-menu:active {
+    transform: scale(1);
+}
+
+
+.profile-menu {
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -38,13 +48,6 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.profile-menu:hover {
-    transform: scale(1.05);
-}
-.profile-menu:active {
-    transform: scale(1);
 }
 
 .logo {
@@ -68,7 +71,6 @@ header {
     transition: all 0.5s ease-in-out;
 }
 
-/* MAIN */
 main {
     flex: 1;
     display: flex;
@@ -81,7 +83,7 @@ h2 {
     margin: 10px;
     color: var(--text1);
     font-weight: 900;
-    font-size: 28px;
+    font-size: 28PX;
 }
 
 ul {
@@ -114,7 +116,10 @@ ul {
     gap: 10px;
     font-size: large;
     transition: all 0.3s ease-in-out;
+
 }
+
+
 
 .task-con p {
     margin: 0;
@@ -126,7 +131,6 @@ input[type="radio"] {
     margin: 0;
 }
 
-/* UPDATE TASK */
 .section-updateTask * {
     margin: 0;
 }
@@ -150,6 +154,7 @@ input[type="radio"] {
 .material-symbols-outlined:hover {
     background: var(--primary);
     color: white;
+
 }
 
 .updatedTask {
@@ -159,9 +164,9 @@ input[type="radio"] {
     transition: all 0.3s ease-in-out;
 }
 
-/* SHOW/HIDE */
 .show {
-    transition: all 0.3s ease-in-out;
+
+    transition: all 3s ease-in-out;
     opacity: 1;
     display: block;
 }
@@ -171,7 +176,6 @@ input[type="radio"] {
     opacity: 0;
 }
 
-/* BUTTONS */
 .addNewTask,
 .btn-addTask {
     background: var(--primary);
@@ -203,7 +207,6 @@ input[type="radio"] {
     }
 }
 
-/* INPUT */
 #newTask {
     padding: 0.5rem;
     border: 1px solid hsl(276, 100%, 80%);
@@ -224,7 +227,6 @@ label {
     color: var(--text2);
 }
 
-/* ADD SECTION */
 .add-section {
     background: white;
     padding: 1rem 2rem;
@@ -262,30 +264,19 @@ label {
     border: none;
 }
 
-/* MENU (PROFILE SIDEBAR) */
 .menu {
     height: 100%;
     position: absolute;
-    right: 0;
-    top: 0;
-    width: 80%;
-    max-width: 350px;
+    right: 0px;
+    top: 0px;
+    padding: 0rem 1rem;
+    min-width: 300px;
+    width: auto;
+    max-width: 400px;
     background: var(--logo);
     transition: all 0.5s ease-in-out;
     z-index: 10;
-    border-radius: 10px 0 0 10px;
-    transform: translateX(100%); /* hidden by default */
-}
-
-/* when menu is open */
-.menu.open-profile {
-    transform: translateX(0);
-}
-
-/* when menu is closed */
-.close-profile {
-    transform: translateX(100%) !important;
-    opacity: 0;
+    border-radius: 10px;
 }
 
 .menu ul {
@@ -294,6 +285,7 @@ label {
     align-items: start;
     margin: 0;
     gap: 10px;
+
 }
 
 .menu li {
@@ -305,6 +297,7 @@ label {
     display: flex;
     gap: 10px;
     align-items: center;
+
 }
 
 .menu li:hover {
@@ -323,24 +316,44 @@ label {
     color: white;
 }
 
+.menu p {
+    background: var(--primary);
+}
+
+.close-profile {
+    transform: translateX(600px);
+    opacity: 0;
+}
+
+#btn-profile-close {
+    left: -50px;
+    right: auto;
+    top: 50%;
+    background: var(--primary);
+    font-size: 30px;
+    color: white;
+    padding: 0.2rem;
+}
+
+#btn-profile-close:hover {
+    background: var(--logo);
+}
+
 .menu li .material-symbols-outlined {
     background: none;
     color: white;
 }
 
-/* TABLE */
-.history-container {
-    width: 100%;
-    overflow-x: auto;
-}
-
 .history-container table {
-    width: 100%;
-    min-width: 350px;
+    width: 500px;
     text-align: center;
+    gap: 0;
 }
 
-table, tr, th, td {
+table,
+tr,
+th,
+td {
     padding: 0.5rem;
     border-collapse: collapse;
     transition: all 0.3s ease-in-out;
@@ -366,16 +379,18 @@ tr:nth-child(even) {
     background: hsl(276, 100%, 95%);
 }
 
-/* ENTRY ANIMATION */
+
 main:not(.menu):not(.menu *) {
     animation: fadeUp 0.6s ease-out forwards;
 }
+
 
 @keyframes fadeUp {
     from {
         opacity: 0;
         transform: translateY(40px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
