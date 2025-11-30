@@ -122,16 +122,12 @@ document.addEventListener("DOMContentLoaded", () => {
         addSection.style.display = "none";
     });
 
-document.getElementsByClassName("profile-menu")[0].addEventListener("click", () => {
-    document.getElementsByClassName("menu")[0].classList.remove("close-profile","shrink");
+const profileBtn = document.querySelector('.profile-menu');
+const menu = document.querySelector('.menu');
+const closeBtn = document.querySelector('#btn-profile-close');
 
-  });
-
-  document.getElementById("btn-profile-close").addEventListener("click", () => {
-    document.getElementsByClassName("menu")[0].classList.add("close-profile");
-    setTimeout(() => {
-      document.getElementsByClassName("menu")[0].classList.add("shrink"); 
-    }, 500);
+profileBtn.addEventListener('click', () => menu.classList.add('open'));
+closeBtn.addEventListener('click', () => menu.classList.remove('open'));
 
 
   });
