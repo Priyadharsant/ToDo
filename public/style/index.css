@@ -396,3 +396,30 @@ main:not(.menu):not(.menu *) {
         transform: translateY(0);
     }
 }
+/* MOBILE TABLE FIX */
+.history-container {
+    width: 100%;
+    overflow-x: auto;     /* Allow horizontal scroll */
+}
+
+.history-container table {
+    width: 100%;          /* Fit inside container */
+    min-width: 400px;     /* Avoid breaking table structure */
+    border-collapse: collapse;
+}
+
+/* Better look on mobile */
+@media (max-width: 480px) {
+    th, td {
+        padding: 0.7rem 0.3rem;
+        font-size: 14px;
+    }
+
+    th {
+        font-size: 16px;
+    }
+
+    .history-container table {
+        min-width: 350px;
+    }
+}
