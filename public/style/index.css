@@ -321,7 +321,7 @@ label {
 }
 
 .close-profile {
-    transform: translateX(600px);
+    transform: scale(0);
     opacity: 0;
 }
 
