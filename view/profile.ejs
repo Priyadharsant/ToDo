@@ -80,11 +80,20 @@
 </body>
 <script>
   document.getElementsByClassName("profile-menu")[0].addEventListener("click", () => {
-    document.getElementsByClassName("menu")[0].classList.remove("close-profile");
+    document.getElementsByClassName("menu")[0].classList.remove("close-profile","shrink");
+
   });
 
   document.getElementById("btn-profile-close").addEventListener("click", () => {
     document.getElementsByClassName("menu")[0].classList.add("close-profile");
+    const box = document.querySelector(".box");
+
+
+    setTimeout(() => {
+      box.classList.add("shrink"); 
+    }, 500);
+
+
   });
 </script>
 
