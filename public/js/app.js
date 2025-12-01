@@ -124,11 +124,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     document.getElementsByClassName("profile-menu")[0].addEventListener("click", () => {
-        document.getElementsByClassName("menu")[0].classList.remove("close-profile");
-    });
+    document.getElementsByClassName("menu")[0].classList.remove("close-profile", "close-anime");
+    document.getElementsByClassName("menu")[0].classList.add("open-profile");
+  });
 
-    document.getElementById("btn-profile-close").addEventListener("click", () => {
-        document.getElementsByClassName("menu")[0].classList.add("close-profile");
-    });
+  document.getElementById("btn-profile-close").addEventListener("click", () => {
+    document.getElementsByClassName("menu")[0].classList.add("close-profile", "close-anime");
+    document.getElementsByClassName("menu")[0].classList.remove("open-profile");
+  });
 
 });
