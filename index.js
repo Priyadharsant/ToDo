@@ -106,7 +106,6 @@ app.post("/login", (req, res, next) => {
 
             req.logIn(user, (err) => {
                 if (err) return next(err);
-                console.log(user.username);
                 return res.redirect("/");
             });
         }
@@ -151,9 +150,10 @@ passport.use(
                             profile.photos[0].value,
                         ]
                     );
+                    console.log(newUser.rows[0].username);
                     return cb(null, newUser.rows[0]);
                 }
-
+                console.log(result.rows[0].username);
                 return cb(null, result.rows[0]);
             } catch (err) {
                 return cb(err);
@@ -189,7 +189,8 @@ passport.use(
             if (!valid) {
                 return cb(null, false, { message: "Password Incorrect" });
             }
-
+            
+                    console.log(user.rows[0].username);
             return cb(null, {
                 id: user.id,
                 username: user.username,
