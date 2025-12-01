@@ -1,9 +1,9 @@
 :root {
-    --bg: hsl(276, 100%, 100%);
-    --primary: hsl(276, 100%, 50%);
-    --text1: hsl(276, 100%, 40%);
-    --text2: hsl(276, 100%, 30%);
-    --logo: hsl(276, 100%, 25%);
+    --bg: hsl(230, 100%, 100%);
+    --primary: hsl(230, 100%, 50%);
+    --text1: hsl(230, 100%, 40%);
+    --text2: hsl(230, 100%, 30%);
+    --logo: hsl(230, 100%, 25%);
 }
 
 body {
@@ -88,7 +88,7 @@ h2 {
 }
 
 ul {
-    box-shadow: 0px 2px 10px hsl(276, 0%, 80%);
+    box-shadow: 0px 2px 10px hsl(230, 0%, 80%);
     border-radius: 10px;
     padding: 0;
     width: 95%;
@@ -99,7 +99,7 @@ ul {
 }
 
 .tasks hr {
-    background: hsl(276, 100%, 80%);
+    background: hsl(230, 100%, 80%);
     width: 90%;
     height: 1.5px;
     border: none;
@@ -210,7 +210,7 @@ input[type="radio"] {
 
 #newTask {
     padding: 0.5rem;
-    border: 1px solid hsl(276, 100%, 80%);
+    border: 1px solid hsl(230, 100%, 80%);
     border-radius: 5px;
     font-size: 1rem;
     transition: all 0.3s ease;
@@ -259,7 +259,7 @@ label {
     border-radius: 50%;
     padding: 0.1rem;
     cursor: pointer;
-    box-shadow: 0 0 10px hsl(276, 30%, 50%);
+    box-shadow: 0 0 10px hsl(230, 30%, 50%);
 }
 
 .btn-sendEdit {
@@ -292,7 +292,7 @@ label {
 }
 
 .menu li {
-    background: hsl(276, 100%, 20%);
+    background: hsl(230, 100%, 20%);
     width: calc(100% - 2rem);
     padding: 0.5rem 1rem;
     border-radius: 10px;
@@ -405,15 +405,15 @@ th {
 
 tr:not(:first-child):hover {
     color: white;
-    background: hsl(276, 100%, 70%);
+    background: hsl(230, 100%, 70%);
 }
 
 tr:nth-child(odd) {
-    background: hsl(276, 100%, 90%);
+    background: hsl(230, 100%, 90%);
 }
 
 tr:nth-child(even) {
-    background: hsl(276, 100%, 95%);
+    background: hsl(230, 100%, 95%);
 }
 
 
