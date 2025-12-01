@@ -106,6 +106,7 @@ app.post("/login", (req, res, next) => {
 
             req.logIn(user, (err) => {
                 if (err) return next(err);
+                console.log(user.username);
                 return res.redirect("/");
             });
         }
