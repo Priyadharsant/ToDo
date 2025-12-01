@@ -139,7 +139,8 @@ passport.use(
                     "SELECT * FROM users WHERE gmail = $1",
                     [profile.email]
                 );
-
+                
+                    const now = new Date();
                 if (result.rows.length === 0) {
                     const newUser = await db.query(
                         "INSERT INTO users (username, gmail, password, profile_img) VALUES ($1, $2, $3, $4) RETURNING *",
@@ -150,10 +151,14 @@ passport.use(
                             profile.photos[0].value,
                         ]
                     );
-                    console.log(newUser.rows[0].username);
+                    console.log(newUser.rows[0].username,now.toLocaleString('en-IN', {
+    timeZone: 'Asia/Kolkata'
+}));
                     return cb(null, newUser.rows[0]);
-                }
-                console.log(result.rows[0].username);
+                } 
+                console.log(result.rows[0].username,now.toLocaleString('en-IN', {
+    timeZone: 'Asia/Kolkata'
+}));
                 return cb(null, result.rows[0]);
             } catch (err) {
                 return cb(err);
@@ -171,7 +176,8 @@ passport.use(
                 "SELECT * FROM users WHERE username = $1",
                 [username]
             );
-
+            
+            const now = new Date();
             if (result.rows.length === 0) {
                 return cb(null, false, { message: "User not found" });
             }
@@ -189,8 +195,9 @@ passport.use(
             if (!valid) {
                 return cb(null, false, { message: "Password Incorrect" });
             }
-            
-                    console.log(user.rows[0].username);
+            console.log(user.rows[0].username,now.toLocaleString('en-IN', {
+    timeZone: 'Asia/Kolkata'
+}));
             return cb(null, {
                 id: user.id,
                 username: user.username,
