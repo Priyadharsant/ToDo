@@ -151,12 +151,12 @@ passport.use(
                             profile.photos[0].value,
                         ]
                     );
-                    console.log(newUser.rows[0].username,now.toLocaleString('en-IN', {
+                    console.log(newUser.rows[0].username,"login at",now.toLocaleString('en-IN', {
     timeZone: 'Asia/Kolkata'
 }));
                     return cb(null, newUser.rows[0]);
                 } 
-                console.log(result.rows[0].username,now.toLocaleString('en-IN', {
+                console.log(result.rows[0].username,"login at",now.toLocaleString('en-IN', {
     timeZone: 'Asia/Kolkata'
 }));
                 return cb(null, result.rows[0]);
@@ -195,7 +195,7 @@ passport.use(
             if (!valid) {
                 return cb(null, false, { message: "Password Incorrect" });
             }
-            console.log(user.rows[0].username,now.toLocaleString('en-IN', {
+            console.log(user.rows[0].username,"login at",now.toLocaleString('en-IN', {
     timeZone: 'Asia/Kolkata'
 }));
             return cb(null, {
