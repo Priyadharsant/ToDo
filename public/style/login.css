@@ -1,9 +1,9 @@
 :root {
-    --bg: linear-gradient(to top, hsl(276, 100%, 90%), hsl(276, 100%, 97%));
-    --text1: hsl(276, 100%, 40%);
-    --text2: hsl(276, 100%, 30%);
-    --logo: hsl(276, 100%, 25%);
-    --primary: hsl(276, 100%, 50%);
+    --bg: linear-gradient(to top, hsl(230, 100%, 90%), hsl(230, 100%, 97%));
+    --text1: hsl(230, 100%, 40%);
+    --text2: hsl(230, 100%, 30%);
+    --logo: hsl(230, 100%, 25%);
+    --primary: hsl(230, 100%, 50%);
 }
 
 body {
@@ -45,7 +45,7 @@ h2 {
 
 input {
     padding: 0.5rem;
-    border: 1px solid hsl(276, 100%, 80%);
+    border: 1px solid hsl(230, 100%, 80%);
     border-radius: 5px;
     font-size: 1rem;
     transition: all 0.3s ease;
