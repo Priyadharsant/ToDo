@@ -346,14 +346,14 @@ label {
     }
 
     to {
-        transform: translateX(100%);
+        transform: translateX(120%);
     }
 }
 
 @keyframes open {
     from {
         display: block;
-        transform: translateX(100%);
+        transform: translateX(120%);
         opacity: 0.5;
     }
 
