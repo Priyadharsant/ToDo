@@ -195,9 +195,8 @@ passport.use(
             if (!valid) {
                 return cb(null, false, { message: "Password Incorrect" });
             }
-            console.log(user.rows[0].username,"login at",now.toLocaleString('en-IN', {
-    timeZone: 'Asia/Kolkata'
-}));
+            console.log(user.username,"login at",now.toLocaleString("en-IN", { timeZone: "Asia/Kolkata" }));
+
             return cb(null, {
                 id: user.id,
                 username: user.username,
